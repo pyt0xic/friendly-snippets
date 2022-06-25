@@ -7,6 +7,7 @@
     "snippets": [
       {
         "language": [
+          "foxpro",
           "plaintext",
           "markdown",
           "tex",
@@ -19,6 +20,10 @@
       {
         "language": "c",
         "path": "./snippets/c.json"
+      },
+      {
+        "language": "foxpro",
+        "path": "./snippets/foxpro.json"
       },
       {
         "language": "cpp",
