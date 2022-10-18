@@ -1174,7 +1174,9 @@
 	"Xml Comment - <summary> Should be used to describe a type or a type member":{
 		"prefix": "xml_<summary>",
 		"body": [
-			"/// <summary>${1:description}</summary>"
+			"/// <summary>",
+			"/// ${1:description}",
+			"/// </summary>"
 		],
 		"description": "Xml Comment - <summary> Should be used to describe a type or a type member"
 	},
