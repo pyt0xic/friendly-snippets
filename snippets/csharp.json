@@ -1115,6 +1115,13 @@
 		],
 		"description": "Xml Comment - <list> A list or table can have as many <item> blocks as needed"
 	},
+	"Xml Comment - <inheritdoc> Inherits documentation from the underlying type":{
+		"prefix": "xml_<inheritdoc>",
+		"body": [
+			"/// <inheritdoc/>"
+		],
+		"description": "Xml Comment - <inheritdoc> Inherits documentation from the underlying type"
+	},
 	"Xml Comment - <para> Is for use inside a tag, such as <summary>, <remarks>, or <returns>, and lets you add structure to the text":{
 		"prefix": "xml_<para>",
 		"body": [
