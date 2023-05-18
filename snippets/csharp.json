@@ -2019,5 +2019,57 @@
       "}"
     ],
     "description": "Adds boilerplate code for a create aggregate handler"
+  },
+  "Aggregate model": {
+    "prefix": "agg_model",
+    "body": [
+      "public sealed class ${1:Aggregate} : AggregateBase<${1:Aggregate}Id, DefaultIdType>",
+      "{",
+      "    ${2}",
+      "    /// <summary>",
+      "    /// Default constructor just in case",
+      "    /// </summary>",
+      "    public ${1:Aggregate}() { }",
+      "",
+      "    public void Apply(${1:Aggregate}Created @event)",
+      "    {",
+      "        Id = @event.${1:Aggregate}Id;",
+      "    }",
+      "}"
+    ],
+    "description": "Adds an aggregate write model"
+  },
+  "Aggregate apply method": {
+    "prefix": "agg_apply",
+    "body": [
+      "    public void Apply(${1:AggregateEvent} @event)",
+      "    {",
+      "        ${2}",
+      "    }"
+    ],
+    "description": "Add an aggregate apply event method"
+  },
+  "Aggregate service": {
+    "prefix": "agg_service",
+    "body": [
+      "public static class ${1:Aggregate}Service",
+      "{",
+      "    public static ${1:Aggregate}Created Execute(Create${1:Aggregate} command)",
+      "    {",
+      "        return new ${1:Aggregate}Created(command.${1:Aggregate}Id, ${2});",
+      "    }",
+      "}"
+    ],
+    "description": "Add aggregate service and create Execute method"
+  },
+  "Aggregate service execute method": {
+    "prefix": "agg_execute",
+    "body": [
+      "    public static ${2:AggregateEvent} Execute(${1:Aggregate} state, ${3:AggregateCommand} command)",
+      "    {",
+      "        return new ${2:AggregateEvent}(command.${1:Aggregate}Id, ${4});",
+      "    }"
+    ],
+    "description": "Add a Execute method to an aggregate service"
   }
 }
